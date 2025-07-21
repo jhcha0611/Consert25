@@ -1,95 +1,94 @@
 package dto;
 
-import java.sql.Date;
+import java.sql.Date; 
 
 public class UserDTO {
-    private int u_no;
-    private String u_id;
-    private String u_pw;
-    private String u_email;
-    private String u_name;
-    private Date u_birth;
-    private String u_number;
-    private String u_gender;
+    private int userNo;
+    private String userId;
+    private String userPw;
+    private String userEmail;
+    private String userName;
+    private java.sql.Date userBirth; // LocalDate -> Date 로 타입 변경
+    private String userNumber;
+    private String userGender;
 
     // 기본 생성자
     public UserDTO() {}
 
     // 모든 필드를 포함한 생성자
-    public UserDTO(int u_no, String u_id, String u_pw, String u_email,
-                   String u_name, Date u_birth, String u_number, String u_gender) {
-        this.u_no = u_no;
-        this.u_id = u_id;
-        this.u_pw = u_pw;
-        this.u_email = u_email;
-        this.u_name = u_name;
-        this.u_birth = u_birth;
-        this.u_number = u_number;
-        this.u_gender = u_gender;
+    public UserDTO(int userNo, String userId, String userPw, String userEmail,
+                   String userName, Date userBirth, String userNumber, String userGender) { // 타입 변경 반영
+        this.userNo = userNo;
+        this.userId = userId;
+        this.userPw = userPw;
+        this.userEmail = userEmail;
+        this.userName = userName;
+        this.userBirth = userBirth;
+        this.userNumber = userNumber;
+        this.userGender = userGender;
     }
 
-    // Getter / Setter
-    public int getU_no() {
-        return u_no;
+    // Getter / Setter (필드명 변경 및 타입 변경 반영)
+    public int getUserNo() {
+        return userNo;
     }
 
-    public void setU_no(int u_no) {
-        this.u_no = u_no;
+    public void setUserNo(int userNo) {
+        this.userNo = userNo;
     }
 
-    public String getU_id() {
-        return u_id;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setU_id(String u_id) {
-        this.u_id = u_id;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public String getU_pw() {
-        return u_pw;
+    public String getUserPw() {
+        return userPw;
     }
 
-    public void setU_pw(String u_pw) {
-        this.u_pw = u_pw;
+    public void setUserPw(String userPw) {
+        this.userPw = userPw;
     }
 
-    public String getU_email() {
-        return u_email;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setU_email(String u_email) {
-        this.u_email = u_email;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
-    public String getU_name() {
-        return u_name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setU_name(String u_name) {
-        this.u_name = u_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public Date getU_birth() {
-        return u_birth;
+    public java.sql.Date getUserBirth() {
+        return userBirth;
     }
 
-    public void setU_birth(Date u_birth) {
-        this.u_birth = u_birth;
+    public void setUserBirth(java.sql.Date userBirth) {
+        this.userBirth = userBirth;
+    }
+    public String getUserNumber() {
+        return userNumber;
     }
 
-    public String getU_number() {
-        return u_number;
+    public void setUserNumber(String userNumber) {
+        this.userNumber = userNumber;
     }
 
-    public void setU_number(String u_number) {
-        this.u_number = u_number;
+    public String getUserGender() {
+        return userGender;
     }
 
-    public String getU_gender() {
-        return u_gender;
-    }
-
-    public void setU_gender(String u_gender) {
-        this.u_gender = u_gender;
+    public void setUserGender(String userGender) {
+        this.userGender = userGender;
     }
 }
