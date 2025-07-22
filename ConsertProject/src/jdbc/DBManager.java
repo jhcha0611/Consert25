@@ -38,7 +38,6 @@ public class DBManager {
 					+ "c_name VARCHAR(100) NOT NULL, " + "c_location VARCHAR(100), " + "c_period VARCHAR(50), "
 					+ "c_age INT" + ")");
 
-
 			st.executeUpdate("CREATE TABLE price (" + "p_no INT AUTO_INCREMENT PRIMARY KEY, " + "c_no INT, "
 					+ "p_price INT, " + "FOREIGN KEY (c_no) REFERENCES consert(c_no) ON DELETE CASCADE" + ")");
 
@@ -63,12 +62,12 @@ public class DBManager {
 					+ "FOREIGN KEY (c_no) REFERENCES consert(c_no) ON DELETE CASCADE, "
 					+ "FOREIGN KEY (r_no) REFERENCES review(r_no) ON DELETE SET NULL" + ")");
 
-			st.executeUpdate("CREATE TABLE payment (pay_no INT AUTO_INCREMENT PRIMARY KEY," + "u_no INT," + "c_no INT,"
-					+ "h_no INT," + "pay_amount INT," + "pay_card VARCHAR(50), "
-					+ "pay_date DATETIME DEFAULT CURRENT_TIMESTAMP," + "pay_name VARCHAR(50),"
-					+ "pay_phone VARCHAR(20)," + "pay_address TEXT,"
-					+ "FOREIGN KEY (u_no) REFERENCES user(u_no) ON DELETE CASCADE,"
-					+ "FOREIGN KEY (c_no) REFERENCES consert(c_no) ON DELETE CASCADE,"
+			st.executeUpdate("CREATE TABLE payment (" + "pay_no INT AUTO_INCREMENT PRIMARY KEY, " + "u_no INT, "
+					+ "c_no INT, " + "h_no INT, " + "pay_amount INT, " + "pay_card VARCHAR(50), "
+					+ "pay_date DATETIME DEFAULT CURRENT_TIMESTAMP, " + "pay_name VARCHAR(50), "
+					+ "pay_phone VARCHAR(20), " + "pay_address TEXT, " + "pay_check TINYINT(1) DEFAULT 0, "
+					+ "FOREIGN KEY (u_no) REFERENCES user(u_no) ON DELETE CASCADE, "
+					+ "FOREIGN KEY (c_no) REFERENCES consert(c_no) ON DELETE CASCADE, "
 					+ "FOREIGN KEY (h_no) REFERENCES history(h_no) ON DELETE CASCADE" + ")");
 
 			st.executeUpdate("CREATE TABLE zone (" + "z_no INT AUTO_INCREMENT PRIMARY KEY, " + "z_name VARCHAR(50), "
@@ -96,17 +95,18 @@ public class DBManager {
 
 		return conn;
 	}
-	   public static ResultSet getResultSet(String sql) throws Exception {
-		      return st.executeQuery(sql);
-		   }
 
-		   public static PreparedStatement getPreparedStatement(String sql) throws Exception {
-		      return cn.prepareStatement(sql);
-		   }
+	public static ResultSet getResultSet(String sql) throws Exception {
+		return st.executeQuery(sql);
+	}
 
-		   public static void updateQ(String sql) throws Exception {
-		      st.executeUpdate(sql);
-		   }
+	public static PreparedStatement getPreparedStatement(String sql) throws Exception {
+		return cn.prepareStatement(sql);
+	}
+
+	public static void updateQ(String sql) throws Exception {
+		st.executeUpdate(sql);
+	}
 
 	public static void main(String[] args) {
 		new DBManager();
