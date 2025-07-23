@@ -1,0 +1,260 @@
+.logo{
+    color: #1a286e;
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 20px; /* 왼쪽에서 20px 떨어지게 */
+    margin-top: 20px;
+}
+
+.signup_box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup_upbox{
+    width: 600px;
+    height: auto;
+    
+    border: 2px solid #b5b5b5;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;  /* 핵심! 세로 방향 정렬 */
+    align-items: center;     /* 줄 가로 중앙 정렬 */
+    
+
+    color: white;
+    margin: 35px 0px 12px 0px;
+
+    gap: 0px; /* 요소 사이 간격을 일정하게 */
+    padding: 0; /* 필요에 따라 조절 */
+
+    overflow: hidden; /* 안에거 안 튀어나오게 하는 */
+
+}
+
+.signup_downbox{
+    width: 600px;
+    height: auto;
+    
+    border: 2px solid #b5b5b5;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;  /* 핵심! 세로 방향 정렬 */
+    align-items: center;     /* 줄 가로 중앙 정렬 */
+
+
+    color: white;
+    margin: 12px 0px 15px 0px;
+
+    gap: 0px; /* 요소 사이 간격을 일정하게 */
+    padding: 0; /* 필요에 따라 조절 */
+
+    overflow: hidden; /* 안에거 안 튀어나오게 하는 */
+
+
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: #b5b5b5;         
+    margin: 0;
+}
+
+.section{
+    width: 100%;
+    height: 62.5px;
+    background-color: #ffffff;
+    border: 0px solid #00000000;
+    display: flex;
+    align-items: center;
+}
+
+.section input{
+    width: 100%;
+    height: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    background-color: transparent; /* 내가 만든 박스 배경 쓰기 */
+    border: none;                  /* 기본 테두리 제거 */
+    outline: none;                 /* 포커스 시 파란 테두리 제거 */
+    color: #333;                   /* 입력 텍스트 색 */
+    font-weight: 500;
+}
+
+.checkbox{
+    margin-left: -420px;
+}
+
+.checkbox_label {
+    color: #555;           /* 텍스트 색상 변경 (예: 짙은 회색) */
+    font-size: 14px;       /* 글자 크기 조절 (기본보다 살짝 작게) */
+}
+
+.checkbox_input {
+    width: 18px;   /* 기본은 보통 16px 정도 */
+    height: 18px;
+}
+
+.signup_button{
+    background-color: #002773;
+    font-weight: bold;
+    width: 600px;   /* 가로 크기 고정 */
+  height: 50px;   /* 세로 크기 고정 */
+    color: white;
+    border: none; /* 요소의 테두리를 완전히 없애는 속성 */
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    /* 색이 즉시 바뀌는 게 아니라, 0.3초 동안 부드럽게 변화하도록 애니메이션 효과 적용
+    ease는 변화 속도가 점점 느려졌다 빨라졌다 하는 자연스러운 움직임을 뜻함 */
+
+    margin: 60px 0px 100px 0px;
+}
+
+.signup_button:hover {
+    background-color: #264386;  
+}
+
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡ로그인창ㅡㅡㅡㅡㅡㅡ */
+.login_box{
+    width: 600px;
+    height: auto;
+    
+    border: 2px solid #b5b5b5;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;  /* 핵심! 세로 방향 정렬 */
+    align-items: center;     /* 줄 가로 중앙 정렬 */
+    
+
+    color: white;
+    margin: 190px 0px 12px 0px;
+
+    gap: 0px; /* 요소 사이 간격을 일정하게 */
+    padding: 0; /* 필요에 따라 조절 */
+
+    overflow: hidden; /* 안에거 안 튀어나오게 하는 */
+}
+
+.login_button{
+    background-color: #002773;
+    font-weight: bold;
+    width: 600px;   /* 가로 크기 고정 */
+  height: 50px;   /* 세로 크기 고정 */
+    color: white;
+    border: none; /* 요소의 테두리를 완전히 없애는 속성 */
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    /* 색이 즉시 바뀌는 게 아니라, 0.3초 동안 부드럽게 변화하도록 애니메이션 효과 적용
+    ease는 변화 속도가 점점 느려졌다 빨라졌다 하는 자연스러운 움직임을 뜻함 */
+
+    margin: 60px 0px 250px 0px;
+}
+
+.login_button:hover {
+    background-color: #264386;  
+}
+
+.login_etc{
+    display: flex;
+    /* display: flex;만 썼는데도 **"지 혼자 가로로 정렬되는 이유"**는 바로:
+    기본 설정이 flex-direction: row이기 때문입니다. */
+    gap: 15px;
+}
+.finding_password{
+    color: #555;  /* 텍스트 색상 변경 (예: 짙은 회색) */
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.finding_id{
+    color: #555;  /* 텍스트 색상 변경 (예: 짙은 회색) */
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.signup_f{
+    color: #555;  /* 텍스트 색상 변경 (예: 짙은 회색) */
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.login_stick{
+    color: #555;  /* 텍스트 색상 변경 (예: 짙은 회색) */
+}
+
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡ관람 후기ㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.showreview_head{
+    display: flex;
+    align-items: center; /* 수직 가운데 정렬 (가로 한 줄 정렬 유지) */
+    justify-content: space-between;
+    
+}
+
+.logo_and_search{
+    display: flex;
+}
+
+.showreview_menu{
+    display: flex;
+    gap: 15px;
+}
+
+.search{
+    width: 350px;
+    height: 50px;
+    padding: 6px;
+    position: relative;
+    top: 23px;
+    left: 15px;
+    border: 2px solid #002773; 
+    border-radius: 50px;         
+    outline: none;              
+    font-size: 16px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: right
+}
+
+.showreview_showreview{
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.showreview_bookingguide{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.showreview_customerservice{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.showreview_mypage{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.showreview_stick{
+    font-size: 30px;
+    color: #555;
+}
+
+.showreview_magnifier{
+    height: 50px;
+    width: 50;
+}
