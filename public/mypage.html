@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAG - MyPage</title>
+    <link rel="stylesheet" href="mypage.css">
+</head>
+<body>
+    <header>
+    <div class="top-bar">
+      <div class="logo-search">
+        <h1 class="logo">TAG</h1>
+        <div class="search-box">
+          <input type="text" placeholder="검색어를 입력하세요"/>
+          <button>
+            <img src="/images/search-icon.png" alt="Search" />
+          </button>
+        </div>
+      </div>
+      <nav class="main-menu">
+        <a href="#">관람후기</a>
+        <a href="#">예매/관람 안내</a>
+        <a href="#">고객센터</a>
+        <a href="mypage.html">마이페이지</a>
+      </nav>
+    </div>
+  </header>
+  <div class="container">
+    <div class="sidebar">
+        <h2>MY PAGE</h2>
+        <ul class="menu">
+            <li class="menu-item active" data-target="benefit">등급별 혜택</li>
+            <li class="menu-item" data-target="history">최근 예매 내역</li>
+            <li class="menu-item" data-target="review">나의 후기</li>
+            <li class="menu-item" data-target="receipt">현금영수증</li>
+            <li class="menu-item" data-target="interest">관심 있는 콘서트</li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="section" id="benefit">등급별 혜택 내용입니다.</div>
+        <div class="section" id="history" style="display: none;">
+  <h3>최근 예매 내역</h3>
+  <table class="reservation-table">
+    <thead>
+      <tr>
+        <th>예매일</th>
+        <th>예매번호</th>
+        <th>공연명</th>
+        <th>공연일시</th>
+        <th style="width:80px;">회차</th>
+        <th style="width: 70px;">가격</th>
+        <th>취소가능일</th>
+        <th style="width: 74px;">상세</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2025.03.30</td>
+        <td>0020233572</td>
+        <td class="title-cell">뮤지컬 &lt;브로드웨이42번가&gt;</td>
+        <td>2004.04.30</td>
+        <td class="round-cell">오후</td>
+        <td>124,000</td>
+        <td>2025.03.30 17:00</td>
+        <td><button class="detail-btn">상세</button></td>
+      </tr>
+      <tr>
+        <td>2025.03.10</td>
+        <td>0020233572</td>
+        <td class="title-cell">뮤지컬 &lt;엘리자벳&gt; - 대전</td>
+        <td>2004.04.28</td>
+        <td class="round-cell">3회</td>
+        <td>124,000</td>
+        <td>2025.03.28 12:00</td>
+        <td><button class="detail-btn">상세</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+        <div class="section" id="review" style="display: none;">나의 후기</div>
+        <div class="section" id="receipt" style="display: none;">현금영수증</div>
+        <div class="section" id="interest" style="display: none;">관심 있는 콘서트</div>
+    </div>
+  </div>>
+  <script>
+    const menuItems = document.querySelectorAll('.menu-item');
+    const sections = document.querySelectorAll('.section');
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            menuItems.forEach(el => el.classList.remove('active'));
+            sections.forEach(section => section.style.display = 'none');
+
+            item.classList.add('active');
+            document.getElementById(item.dataset.target).style.display = 'block';
+        });
+    });
+  </script>
+</body>
+</html>
